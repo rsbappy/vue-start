@@ -5,7 +5,7 @@
 <script setup>
   // life cycle hooks
 
-import { onBeforeMount, onMounted, ref } from 'vue';
+import { onBeforeMount, onBeforeUnmount, onBeforeUpdate, onMounted, onUnmounted, onUpdated, ref } from 'vue';
  let title = ref('')
 
   onBeforeMount(()=>{
@@ -17,4 +17,19 @@ import { onBeforeMount, onMounted, ref } from 'vue';
     title.value= 'Vue js master Class'
     console.log(' Mounted');
   })
+  onUpdated (()=>{ 
+    console.log(' upateded');
+  })
+
+  onBeforeUpdate(()=>{
+    console.log('before upateded');
+  })
+  onBeforeUnmount(()=> {
+    console.log('before unmount');
+  })
+  onUnmounted (()=>{
+    console.log('unmounted');
+  })
+
+
 </script>
